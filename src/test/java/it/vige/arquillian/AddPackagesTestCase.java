@@ -15,6 +15,7 @@ public class AddPackagesTestCase {
 	@Deployment
 	public static JavaArchive createDeployment() {
 		JavaArchive javaArchive = ShrinkWrap.create(JavaArchive.class).addPackages(true, "org");
+		assertTrue(javaArchive.toString(true).contains("drools"));
 		assertTrue(javaArchive.toString(true).contains("h2"));
 		return javaArchive;
 	}
