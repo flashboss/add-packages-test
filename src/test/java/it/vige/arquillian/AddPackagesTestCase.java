@@ -14,7 +14,8 @@ public class AddPackagesTestCase {
 
 	@Deployment
 	public static JavaArchive createDeployment() {
-		JavaArchive javaArchive = ShrinkWrap.create(JavaArchive.class).addPackages(true, "org");
+		JavaArchive javaArchive = ShrinkWrap.create(JavaArchive.class).addPackages(true, "org/h2").addPackages(true,
+				"org/drools");
 		assertTrue(javaArchive.toString(true).contains("drools"));
 		assertTrue(javaArchive.toString(true).contains("h2"));
 		return javaArchive;
@@ -22,6 +23,5 @@ public class AddPackagesTestCase {
 
 	@Test
 	public void emptyTest() {
-
 	}
 }

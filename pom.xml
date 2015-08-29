@@ -8,6 +8,47 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+	<profiles>
+		<profile>
+			<id>working-test</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>com.h2database</groupId>
+					<artifactId>h2</artifactId>
+					<version>1.4.188</version>
+					<scope>system</scope>
+					<systemPath>${basedir}/lib/h2-1.4.188.jar</systemPath>
+				</dependency>
+			</dependencies>
+		</profile>
+		<profile>
+			<id>not-working-test</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>com.h2database</groupId>
+					<artifactId>h2</artifactId>
+					<version>1.4.188</version>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss.weld</groupId>
+				<artifactId>weld-core-bom</artifactId>
+				<version>2.2.14.Final</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>org.jboss.arquillian.container</groupId>
@@ -30,12 +71,6 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.188</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.drools</groupId>
 			<artifactId>drools-core</artifactId>
 			<version>5.5.0.Final</version>
@@ -54,15 +89,4 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.jboss.weld</groupId>
-				<artifactId>weld-core-bom</artifactId>
-				<version>2.2.14.Final</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 </project>
