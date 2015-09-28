@@ -10,7 +10,7 @@
 	</properties>
 	<profiles>
 		<profile>
-			<id>working-test</id>
+			<id>working-test-188</id>
 			<activation>
 				<activeByDefault>false</activeByDefault>
 			</activation>
@@ -25,7 +25,22 @@
 			</dependencies>
 		</profile>
 		<profile>
-			<id>not-working-test</id>
+			<id>working-test-189</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>com.h2database</groupId>
+					<artifactId>h2</artifactId>
+					<version>1.4.189</version>
+					<scope>system</scope>
+					<systemPath>${basedir}/lib/h2-1.4.189.jar</systemPath>
+				</dependency>
+			</dependencies>
+		</profile>
+		<profile>
+			<id>not-working-test-188</id>
 			<activation>
 				<activeByDefault>false</activeByDefault>
 			</activation>
@@ -34,6 +49,19 @@
 					<groupId>com.h2database</groupId>
 					<artifactId>h2</artifactId>
 					<version>1.4.188</version>
+				</dependency>
+			</dependencies>
+		</profile>
+		<profile>
+			<id>not-working-test-189</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>com.h2database</groupId>
+					<artifactId>h2</artifactId>
+					<version>1.4.189</version>
 				</dependency>
 			</dependencies>
 		</profile>
